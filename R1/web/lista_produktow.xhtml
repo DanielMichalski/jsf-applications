@@ -8,17 +8,31 @@
 
 <ui:composition template="szablon.xhtml">
     <ui:define name="content">
-        <h2>Lista produktów dla kategorii Oprogramowanie</h2>
-        <h:dataTable id="tabelaProduktow">
-            <h:column>
-                <f:facet name="header">Nazwa</f:facet>
-                <h:outputText value="Nazwa" />
-            </h:column>
-            <h:column>
-                <f:facet name="header">Cena</f:facet>
-                <h:outputText value="Cena" />
-            </h:column>
-        </h:dataTable>
+        <h2>Lista produktów dla kategorii #{listaProduktowBean.kategoria.nazwa}</h2>
+        <h:form>
+            <h:dataTable id="tabelaProduktow" value="#{listaProduktowBean.modelProdukty}" var="produkt">
+                <h:column>
+                    <f:facet name="header">Nazwa</f:facet>
+                    <h:outputLink value="produktSzczegolowy.xhtml">
+                        <f:param name="id" value="#{produkt.id}"/>
+                        <h:outputText value="#{produkt.nazwa}"/>
+                    </h:outputLink>
+                </h:column>
+                <h:column>
+                    <f:facet name="header">Cena</f:facet>
+                    <h:outputFormat value="#{produkt.cena}"/>
+                </h:column>
+                <h:column>
+                    <f:facet name="header">Dodaj</f:facet>
+                    <h:commandButton value="Dodaj"/>
+                </h:column>
+            </h:dataTable>
+            <h:commandLink rendered="#{listaProduktowBean.poprzedni}">&laquo;</h:commandLink>
+            <h:commandLink rendered="#{listaProduktowBean.nastepny}">&raquo;</h:commandLink>
+            <br />
+            <h:commandButton value="Do koszyka"/>
+            <h:commandButton value="Główna"/>
+        </h:form>
     </ui:define>
 </ui:composition>
 
