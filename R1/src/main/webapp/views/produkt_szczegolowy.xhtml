@@ -6,16 +6,19 @@
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
       xmlns:f="http://xmlns.jcp.org/jsf/core">
 
-<ui:composition template="szablon.xhtml">
+<ui:composition template="/views/szablon.xhtml">
     <ui:define name="content">
-        <h2>Proceosr Quad</h2>
+        <h2><h:outputText value="#{produktSzczegolowyBean.wybranyProdukt.nazwa}" /></h2>
         <h:panelGrid columns="2" border="1">
             <h:outputText value="Cena:" />
-            <h:outputFormat value="(0) zł:">
-                <f:param value="555,00" />
+            <h:outputFormat value="{0} zł">
+                <f:param value="#{produktSzczegolowyBean.wybranyProdukt.cena}" />
             </h:outputFormat>
             <h:outputText value="Opis:"/>
-            <h:outputText value="Opis procesora" />
+            <h:outputText value="#{produktSzczegolowyBean.wybranyProdukt.opis}" />
+            <h:commandButton value="Dodaj do koszyka">
+                <f:param name="produktId" value="#{produktSzczegolowyBean.wybranyProdukt.id}"/>
+            </h:commandButton>
         </h:panelGrid>
     </ui:define>
 </ui:composition>

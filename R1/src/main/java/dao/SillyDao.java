@@ -30,10 +30,10 @@ public class SillyDao {
         kategorie.add(pamieci);
         kategorie.add(laptopy);
 
-        Produkt p1 = new Produkt(1, "Procesor Quad", new BigDecimal(550), 10, procesory);
-        Produkt p2 = new Produkt(2, "Procesor Duo", new BigDecimal(400), 10, procesory);
-        Produkt p3 = new Produkt(3, "Procesor Single", new BigDecimal(300), 10, procesory);
-        Produkt p4 = new Produkt(4, "Pamięć 4 GB", new BigDecimal(350), 10, pamieci);
+        Produkt p1 = new Produkt(1, "Procesor Quad", new BigDecimal(550), 10, procesory, "opis1");
+        Produkt p2 = new Produkt(2, "Procesor Duo", new BigDecimal(400), 10, procesory, "opis2");
+        Produkt p3 = new Produkt(3, "Procesor Single", new BigDecimal(300), 10, procesory, "opis3");
+        Produkt p4 = new Produkt(4, "Pamięć 4 GB", new BigDecimal(350), 10, pamieci, "opis4");
         produkty.add(p1);
         produkty.add(p2);
         produkty.add(p3);

@@ -11,11 +11,11 @@
         <h2> Zakończ zamowienie</h2>
         <h:panelGrid columns="2">
             <h:outputText value="Imię:" />
-            <h:inputText />
+            <h:inputText value="#{koszykBean.zamowienie.uzytkownik.imie}"/>
             <h:outputText value="Nazwisko:" />
-            <h:inputText />
+            <h:inputText value="#{koszykBean.zamowienie.uzytkownik.nazwisko}"/>
             <h:outputText value="Adres" />
-            <h:inputTextarea />
+            <h:inputTextarea value="#{koszykBean.zamowienie.uzytkownik.adres}"/>
             <h:outputText value="" />
             <h:commandButton value="Finalizuj" />
         </h:panelGrid>

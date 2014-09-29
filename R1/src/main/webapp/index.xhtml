@@ -6,12 +6,12 @@
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
       xmlns:f="http://xmlns.jcp.org/jsf/core">
 
-<ui:composition template="/szablon.xhtml">
+<ui:composition template="/views/szablon.xhtml">
     <ui:define name="content">
         <h1>Witaj w sklepie internetowym</h1>
 
         <h:panelGrid columnClasses="komorka" columns="2">
-            <ui:include src="/kategorie.xhtml" />
+            <ui:include src="views/kategorie.xhtml" />
             <h:panelGroup>
                 <h:form>
                     <h4>Twój koszyk</h4>

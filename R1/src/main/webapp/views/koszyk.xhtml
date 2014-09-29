@@ -6,22 +6,26 @@
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
       xmlns:f="http://xmlns.jcp.org/jsf/core">
 
-<ui:composition template="szablon.xhtml">
+<ui:composition template="/views/szablon.xhtml">
     <ui:define name="content">
         <h2>Koszyk</h2>
         <h:form>
-            <h:dataTable>
+            <h:dataTable value="#{koszykBean.zamowienie.skladniki}" var="skladnik">
                <h:column>
                    <f:facet name="header">Nazwa</f:facet>
-                   <h:outputText value="Procesor Quad" />
+                   <h:outputText value="#{skladnik.produkt.nazwa}" />
                </h:column>
                <h:column>
                    <f:facet name="header">Cena</f:facet>
-                   <h:outputText value="Cena" />
+                   <h:outputText value="#{skladnik.cena}" />
                </h:column>
                 <h:column>
                     <f:facet name="header">Ilosc</f:facet>
-                    <h:inputText value="1" size="3"/>
+                    <h:inputText value="1" size="#{skladnik.ilosc}"/>
+                </h:column>
+                <h:column>
+                    <f:facet name="header">Łącznie</f:facet>
+                    <h:outputText id="łącznie" value="#{skladnik.łacznie}"/>
                 </h:column>
                 <h:column>
                     <f:facet name="header">Przelicz</f:facet>

@@ -53,6 +53,10 @@ public class Skladnik {
         this.zamowienie = zamowienie;
     }
 
+    public BigDecimal getLacznie() {
+        return cena.multiply(new BigDecimal(ilosc));
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
